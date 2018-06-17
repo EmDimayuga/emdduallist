@@ -1,0 +1,29 @@
+﻿
+span.paddRight10{
+    padding-right:10px;
+}
+
+span.paddLeft10{
+    padding-left:10px;
+}
+
+.moveBtn{
+    padding:5px;
+}
+
+.controlDiv{
+  display: flex;
+  justify-content: center;
+}
+
+.controlDivContent{
+  align-self: center;
+}
+
+.leftSelectLabel{
+    font-weight:bold;
+}
+
+.rightSelectLabel{
+    font-weight:bold;
+}
