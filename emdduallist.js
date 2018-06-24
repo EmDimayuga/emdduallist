@@ -1,11 +1,14 @@
-﻿/**
+﻿/// <reference path="emdduallist-vsdoc.js" />
+/**
 * duallist v0.0.1 by @emd
 * Copyright 2018 EMD
 * http://www.apache.org/licenses/LICENSE-2.0
 */
 
 (function ($) {
+    //test
     $.fn.emdduallist = function emdduallist (options) {
+        /// test
 
         //default values
         var defaults={
@@ -62,21 +65,21 @@
 
             //wrap the all of the controls into a div
             var targetSelectParent = targetSelect.parent();
-            targetSelectParent.wrap("<div class='container'>");
+            targetSelectParent.wrap("<div class='container emdduallist'>");
 
             RenderSelectValues(targetSelect,settings.leftSelectSource);
         }
 
         function RenderMoveControls(grandParent) {
             //move buttons
-            $(grandParent).append("<div id='controlDiv' name='controlDiv' class='col-md-4 controlDiv'></div>");
+            $(grandParent).append("<div id='controlDiv' name='controlDiv' class='col-md-4 emdduallist-controlDiv'></div>");
 
             var controlDiv = $('#controlDiv');
             controlDiv.css({
-                height: settings.height
+                height: settings.height + 100 //center the controls accordingly
             });
 
-            var controlDivContent = $("<div id='controlDivContent' name='controlDivContent' class='controlDivContent'></div>");
+            var controlDivContent = $("<div id='controlDivContent' name='controlDivContent' class='emdduallist-controlDivContent'></div>");
 
             controlDiv.append(controlDivContent);
 
@@ -84,10 +87,10 @@
             var moveAllToRightButton = $("<button></button>", {
                 id: "moveAllToRightBtn",
                 name: "moveAllToRightBtn",
-                class: "btn btn-block moveBtn",
+                class: "btn btn-block emdduallist-moveBtn",
             }).append($("<span></span>", {
                 text: "Move all to right",
-                class: "paddRight10"
+                class: "emdduallist-moveBtn-text-paddRight"
             })).append($("<span></span>", {
                 class: "glyphicon glyphicon-list"
             })).append($("<span></span>", {
@@ -100,10 +103,10 @@
             var moveRightButton = $("<button></button>", {
                 id: "moveRightBtn",
                 name: "moveRightBtn",
-                class: "btn btn-block moveBtn",
+                class: "btn btn-block emdduallist-moveBtn",
             }).append($("<span></span>", {
                 text: "Move right",
-                class: "paddRight10"
+                class: "emdduallist-moveBtn-text-paddRight"
             })).append($("<span></span>", {
                 class: "glyphicon glyphicon-chevron-right"
             }));
@@ -113,12 +116,12 @@
             var moveLeftButton = $("<button></button>", {
                 id: "moveLeftBtn",
                 name: "moveLeftBtn",
-                class: "btn btn-block moveBtn",
+                class: "btn btn-block emdduallist-moveBtn",
             }).append($("<span></span>", {
                 class: "glyphicon glyphicon-chevron-left"
             })).append($("<span></span>", {
                 text: "Move left",
-                class: "paddLeft10"
+                class: "emdduallist-moveBtn-text-paddLeft"
             }));
             controlDivContent.append(moveLeftButton);
 
@@ -126,14 +129,14 @@
             var moveAllToLeftButton = $("<button></button>", {
                 id: "moveAllToLeftBtn",
                 name: "moveAllToLeftBtn",
-                class: "btn btn-block moveBtn",
+                class: "btn btn-block emdduallist-moveBtn",
             }).append($("<span></span>", {
                 class: "glyphicon glyphicon-chevron-left"
             })).append($("<span></span>", {
                 class: "glyphicon glyphicon-list"
             })).append($("<span></span>", {
                 text: "Move all to left",
-                class: "paddLeft10"
+                class: "emdduallist-moveBtn-text-paddLeft"
             }));
             controlDivContent.append(moveAllToLeftButton);
         }
@@ -176,10 +179,7 @@
                 id: "searchLeftSelectBox",
                 name: "searchLeftSelectBox",
                 placeholder: "Search",
-                class: "form-control"
-            }).css({
-                "margin-top": 5,
-                "margin-bottom":5
+                class: "form-control emdduallist-searchBox"
             });
 
             if (settings.searchBoxLocation === "bottom") {
@@ -198,10 +198,7 @@
                 id: "searchRightSelectBox",
                 name: "searchRightSelectBox",
                 placeholder: "Search",
-                class: "form-control"
-            }).css({
-                "margin-top": 5,
-                "margin-bottom":5
+                class: "form-control emdduallist-searchBox"
             });
 
             if (settings.searchBoxLocation === "bottom") {
@@ -289,7 +286,7 @@
 
         //search
         var searchLeft = $("#searchLeftSelectBox");
-        searchLeft.on("keyup", function () {
+        searchLeft.on("input", function () {
             var target = $("#leftSelect");
             var filter = $(this).val();
 
@@ -297,7 +294,7 @@
         });
 
         var searchRight = $("#searchRightSelectBox");
-        searchRight.on("keyup", function () {
+        searchRight.on("input", function () {
             var target = $("#rightSelect");
             var filter = $(this).val();
 
@@ -364,7 +361,7 @@
                     id: "leftSelectLabel",
                     name: "leftSelectLabel",
                     text: settings.leftLabel,
-                    class: "leftSelectLabel"
+                    class: "emdduallist-leftSelectLabel"
                 });
 
                 if (settings.searchBoxLocation === "bottom") {
@@ -379,7 +376,7 @@
                     id: "rightSelectLabel",
                     name: "rightSelectLabel",
                     text: settings.rightLabel,
-                    class: "rightSelectLabel"
+                    class: "emdduallist-rightSelectLabel"
                 });
 
                 if (settings.searchBoxLocation === "bottom") {

@@ -1,29 +1,36 @@
 ﻿
-span.paddRight10{
+.emdduallist-moveBtn-text-paddRight{
     padding-right:10px;
 }
 
-span.paddLeft10{
+.emdduallist-moveBtn-text-paddLeft{
     padding-left:10px;
 }
 
-.moveBtn{
+.emdduallist-moveBtn{
     padding:5px;
 }
 
-.controlDiv{
+.emdduallist-controlDiv{
   display: flex;
   justify-content: center;
 }
 
-.controlDivContent{
+.emdduallist-controlDivContent{
   align-self: center;
 }
 
-.leftSelectLabel{
+.emdduallist-leftSelectLabel{
     font-weight:bold;
 }
 
-.rightSelectLabel{
+.emdduallist-rightSelectLabel{
     font-weight:bold;
+}
+
+.emdduallist-searchBox{
+    margin:5px 0px;
+}
+
+.emdduallist{
 }
